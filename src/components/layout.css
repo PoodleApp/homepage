@@ -38,6 +38,7 @@ template {
   display: none;
 }
 a {
+  color: #29b7f7;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
@@ -617,4 +618,11 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+.flatButton {
+  color: white;
+  background-color: #795548;
+  padding: 1em;
+  border-radius: 0.3em;
 }
