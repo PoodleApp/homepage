@@ -1,12 +1,9 @@
 import brown from "@material-ui/core/colors/brown"
 import lightBlue from "@material-ui/core/colors/lightBlue"
-import { createMuiTheme } from "@material-ui/core/styles"
-import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider"
-import React from "react"
+import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles"
+import { graphql, StaticQuery } from "gatsby"
+import React, { ReactNode } from "react"
 import Helmet from "react-helmet"
-import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
-
 import Header from "./header"
 import "./layout.css"
 
@@ -17,7 +14,7 @@ const theme = createMuiTheme({
   }
 })
 
-const Layout = ({ children }) => (
+const Layout: React.FC<{ children: ReactNode }> = ({ children }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -56,9 +53,5 @@ const Layout = ({ children }) => (
     )}
   />
 )
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired
-}
 
 export default Layout
